@@ -43,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerUser();
-                //Toast.makeText(SignUpActivity.this, "User Register", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, "User Register", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,6 +96,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 RegisterResponse registerResponse = response.body();
                 if(response.isSuccessful()){
+                    NavigateToLogin();
                     Toast.makeText(SignUpActivity.this, registerResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -109,4 +110,12 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+    private  void NavigateToLogin()
+    {
+        Intent iHome = new Intent(SignUpActivity.this, LoginActivity.class);
+        iHome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(iHome);
+    }
+
 }

@@ -13,3 +13,11 @@
 .externalNativeBuild
 .cxx
 local.properties
+.idea/vcs.xml
+.tmp/
+android/
+caches/
+daemon/
+jdks/
+native/
+wrapper/

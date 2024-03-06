@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.retrofitapp.Activities.LoginActivity;
 import com.example.retrofitapp.Activities.SignUpActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent iSignUp = new Intent(MainActivity.this, SignUpActivity.class);
+        Intent iSignUp = new Intent(MainActivity.this, LoginActivity.class);
 
         new Handler().postDelayed(new Runnable() {
             @Override

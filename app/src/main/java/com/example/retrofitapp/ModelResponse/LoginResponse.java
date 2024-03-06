@@ -1,14 +1,23 @@
 package com.example.retrofitapp.ModelResponse;
 
-import com.google.gson.annotations.SerializedName;
+public class LoginResponse {
 
-public class RegisterResponse {
+    User user;
     String status;
     String message;
 
-    public RegisterResponse(String status, String msg) {
+    public LoginResponse(User user, String status, String message) {
+        this.user = user;
         this.status = status;
-        this.message = msg;
+        this.message = message;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getStatus() {
