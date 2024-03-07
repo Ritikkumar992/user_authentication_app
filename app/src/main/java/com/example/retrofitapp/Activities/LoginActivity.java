@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.retrofitapp.ModelResponse.LoginResponse;
-import com.example.retrofitapp.ModelResponse.RegisterResponse;
 import com.example.retrofitapp.R;
 import com.example.retrofitapp.RetrofitClient;
 import com.example.retrofitapp.SharedPrefManager;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

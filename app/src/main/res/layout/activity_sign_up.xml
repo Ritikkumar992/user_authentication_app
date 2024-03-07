@@ -17,35 +17,62 @@
         android:text="Create Your Account"
         android:fontFamily="cursive"
         android:textColor="@color/red"
-        android:textSize="26sp"
+        android:textSize="40sp"
         />
-    <EditText
-        android:id="@+id/register_name_id"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        android:padding="10dp"
-        />
-    <EditText
-        android:id="@+id/register_email_id"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:id="@+id/register_name_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Name"
+            android:padding="10dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:padding="10dp"
-        />
-    <EditText
-        android:id="@+id/register_password_id"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:id="@+id/register_email_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:padding="10dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="numberPassword"
-        android:padding="10dp"
-        />
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:id="@+id/register_password_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:inputType="numberPassword"
+            android:padding="10dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     <Button
         android:id="@+id/register_button_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="Register"
+        android:backgroundTint="@color/blue"
         />
     <TextView
         android:layout_width="wrap_content"

@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
 import com.example.retrofitapp.Activities.LoginActivity;
-import com.example.retrofitapp.Activities.SignUpActivity;
 
 public class MainActivity extends AppCompatActivity {
 
