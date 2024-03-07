@@ -91,14 +91,19 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 LoginResponse loginResponse = response.body();
                 String status = loginResponse.getStatus();
-                if(response.isSuccessful() && status.equals("200")){
-                    sharedPrefManager.saveUser(loginResponse.getUser());
-                    navigateToHome();
-                    Toast.makeText(LoginActivity.this, loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                if(response.isSuccessful()){
+                    if(status.equals("200")){
+                        sharedPrefManager.saveUser(loginResponse.getUser());
+                        navigateToHome();
+                        Toast.makeText(LoginActivity.this, loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+//                        Toast.makeText(LoginActivity.this, loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "USER NOT FOUND ⚠️", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else{
-                    Toast.makeText(LoginActivity.this, loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(LoginActivity.this, "LOGIN FAIIIILLLLLLL", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,  loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -110,14 +115,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-
         if(sharedPrefManager.isLoggedIn()){
             navigateToHome();
         }
     }
-
-
-
 
     private  void navigateToHome()
     {

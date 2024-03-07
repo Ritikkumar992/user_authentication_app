@@ -95,7 +95,8 @@ public class SignUpActivity extends AppCompatActivity {
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
 
                 RegisterResponse registerResponse = response.body();
-                if(response.isSuccessful()){
+                String status = registerResponse.getStatus();
+                if(response.isSuccessful() && status.equals("200")){
                     NavigateToLogin();
                     Toast.makeText(SignUpActivity.this, registerResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }
